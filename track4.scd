@@ -3,7 +3,7 @@
 170/60;
 "/home/xtr/exoterrism/drumlib/old/synth library.scd".loadPath;
 
-
+s.plotTree;
 Ndef(\noise).clear;
 
 Pdef(\snare2).stop;

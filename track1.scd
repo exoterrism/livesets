@@ -1,11 +1,17 @@
 
-
+s.scope;
+t.tempo = 60/4/60;
 t.tempo = 60/60;
+
 ~elapsedtime.time
 
 
 s.meter
 Ndef(\noise2).clear;
+
+Tdef(\track1).stop;
+Pdef.clear;
+Ndef.clear;
 (
 
 Pdef(\melo).stop;
@@ -26,7 +32,7 @@ var sig = LatoocarfianL.ar(
 	sig = Limiter.ar(sig,0.4);
 	sig =	[sig ,DelayL.ar(sig,0.1,100/44100)];
 	sig = Compander.ar(sig,In.ar(0,1),0.01,1,0.01,0.01,0.1);
-	sig*0.4;
+	sig = sig*0.5;
 	Out.ar(4,sig);
 });
 
@@ -39,7 +45,7 @@ Pdef(\t3,Pbind(\instrument,\t1kick,\dur,4,
 
 16.wait;
 Pbindef(\t3,\dur,1/4,\rel,Pseq([0.6],inf),\amp,0.5);
-Pdef(\snare,Pbind(\instrument,\snare2,\out,1,\dur,1/4,\isRest,Pseq([Pseq([0,0,0,0,0,1,0,0],15),Pseq([0,0,0,0,0,0,1,0],1)],inf).coin.not)).play;
+Pdef(\snare,Pbind(\instrument,\snare2,\out,1,\dur,1/4,\isRest,Pseq([Pseq([0,0,0,0,0,0,1,0],15),Pseq([0,0,0,0,0,0,1,0],1)],inf).coin.not)).play;
 	16.wait;
 	Pdef(\snare).stop;
 	Pdef(\t3).stop;
@@ -248,8 +254,15 @@ Pbindef(\snare2,\dur,1/16);
 8.wait;
 Pbindef(\snare2,\dur,1/6);
 32.wait;
+Pdef(\t5).stop;
+Pdef(\hat2).stop;
+Pdef(\snare2).stop;
+Pdef(\sample).stop;
 "end".postln;
 	4.wait;
+	Ndef(\noise3).free;
+	4.wait;
+
 }).play;
 )
 

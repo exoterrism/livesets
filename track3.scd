@@ -1,5 +1,5 @@
 t.tempo =1;
-
+s
 	~elapsedtime.time;
 
 1285/60;
@@ -135,8 +135,6 @@ Pdef(\melody,Pbind(\instrument,\saw,
 
 16.wait;
 
-}).play;
-
 
 
 Pdef(\melody).stop;
@@ -147,7 +145,7 @@ Pdef(\kick).stop;
 			Pdef(\hihats2).stop;
 			Pdef(\z).stop;
 			Pdef(\clap).stop;
-Pdef(\bass,Pbind(\instrument,\micro,\dur,1/3,\out,3,\amp,2,\atk,0.01,\rel,0.01,\ctranspose,Pseq([-20,-22,-23,-25],inf))).play;
+Pdef(\bass,Pbind(\instrument,\micro,\dur,4,\out,3,\amp,2,\atk,0.01,\rel,0.5,\ctranspose,Pseq([-23,-24],inf))).play;
 
 9.wait;
 			Pdef(\melody).stop;
@@ -162,8 +160,8 @@ Pbindef(\t5,\dur,1/8);
 6.wait;
 
 Pdef(\clap).play;
-Pbindef(\clap,\dur,1/3,\isRest,Pseq([0,1,0,1,0,1,0,1],inf).coin.not);
-Pdef(\t5,Pbind(\instrument,\kick,\out,0,\dur,1/3,\amp,0.1,\frequ,Pseq([60,50,40,30],inf),\tu,Pseq([Pseq([1.4],8),Pseq([1.3],4),Pseq([1.2],4)],inf))).play;
+Pbindef(\clap,\dur,1,\isRest,Pseq([0,0,0,1,0,0,0],inf).coin.not);
+	Pdef(\t5,Pbind(\instrument,\kick,\out,0,\dur,1/3,\amp,0.1,\frequ,Pseq([60,50,40,30],inf),\tu,Pseq([Pseq([1.4],8),Pseq([1.3],4),Pseq([1.2],4)],inf),\isRest,Pseq([1,0,1,0,0,1,0,0],inf).coin.not)).play;
 
 28.wait;
 Pdef(\bass).stop;
@@ -174,7 +172,7 @@ Pbindef(\t6,\dur,1/3,\famp1,0.01);
 15.wait;
 	Pdef(\t6).stop;
 1.wait;
-Pdef(\bass,Pbind(\instrument,\micro,\dur,1/3,\out,3,\amp,2,\atk,0.01,\rel,0.01,\ctranspose,Pseq([-18,-22,-23,-25],inf))).play;
+Pdef(\bass,Pbind(\instrument,\micro,\dur,4,\out,3,\amp,2,\atk,0.01,\rel,0.5,\ctranspose,Pseq([-23,-25],inf))).play;
 Pdefn(\seq1,Pseq([Pseq(~eu.(8,4,0).asInteger,1),Pseq(~eu.(8,4,0).asInteger,1)],inf));
 
 Pdef(\t5).stop;
@@ -182,7 +180,7 @@ Pdef(\t5).stop;
 16.wait;
 Pdef(\t5).play;
 
-Pdef(\bass,Pbind(\instrument,\micro,\dur,1/6,\out,3,\amp,2,\atk,0.01,\rel,0.01,\ctranspose,Pseq([Pseq([-20,-22,-23,-25],1),Pseq([-18,-22,-23,-25],1)],inf))).play;
+Pdef(\bass,Pbind(\instrument,\micro,\dur,4,\out,3,\amp,2,\atk,0.01,\rel,0.5,\ctranspose,Pseq([-23,-27],inf))).play;
 
 16.wait;
 

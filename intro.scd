@@ -1,11 +1,14 @@
 /// create parts to launch with pad
 "/home/xtr/exoterrism/livesets/electropixel.scd".loadPath;
-
+s.scope;
 
 s.meter;
 ~elapsedtime.time;
 s.plotTree;
+Ndef(\noise2).free;
 
+Ndef(\drones).free;
+Ndef(\drones2).free;
 (
 ~hollow = Buffer.read(s, "/home/xtr/Desktop/.footwork/soundfiles/hollowearth.wav");
 
@@ -119,7 +122,7 @@ Pdef(\sample,Pbind(\instrument,\playbuf,\bufnum,~hollow,\pos,44100*4.5,\out,3,\l
 	sig = Limiter.ar(sig,0.4);
 	sig = [sig ,DelayL.ar(sig,0.1,1000/44100)];
 	sig = Compander.ar(sig,In.ar(0,2),0.1,1,0.1,0.01,0.5);
-	sig*0.4;
+	sig = sig*0.4;
 Out.ar(4,sig);
 });
 
