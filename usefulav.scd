@@ -477,3 +477,4 @@ a=1@2;f=1;w=Window().front.drawHook_({900.do{Pen.line(a*200,(a=(a*(f=f+2e-6)).y.
 ~z= 10000
 ~d= 10
 ~d= 200
+

@@ -9,4 +9,5 @@ SynthDef(\all,{
 ~all = Synth(\all);
 ~all.free;
 
+s.scope;
 FreqScope.new

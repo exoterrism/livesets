@@ -1,23 +1,12 @@
 /// create parts to launch with pad
 "/home/xtr/exoterrism/livesets/electropixel.scd".loadPath;
-s.scope;
-
 s.meter;
-~elapsedtime.time;
-s.plotTree;
-Ndef(\noise2).free;
-
-Ndef(\drones).free;
-Ndef(\drones2).free;
 (
 ~hollow = Buffer.read(s, "/home/xtr/Desktop/.footwork/soundfiles/hollowearth.wav");
-
 t = TempoClock.default;
 t.tempo= 60/60;
 ~elapsedtime = BeatSched.new;
 "/home/xtr/exoterrism/patterns/dub.scd".loadPath;
-
-
 Ndef(\drones).fadeTime=1;
 Ndef(\drones2).fadeTime=1;
 Ndef(\drones3).fadeTime=1;

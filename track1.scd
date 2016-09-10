@@ -1,24 +1,14 @@
 
-s.scope;
-t.tempo = 60/4/60;
-t.tempo = 60/60;
 
-~elapsedtime.time
-
-
-s.meter
-Ndef(\noise2).clear;
-
-Tdef(\track1).stop;
-Pdef.clear;
-Ndef.clear;
 (
 
 Pdef(\melo).stop;
 Pdef(\melo2).stop;
 Ndef(\noise2).clear;
 Tdef(\intro).stop;
-
+Ndef(\noise2).free;
+Ndef(\drones).free;
+Ndef(\drones2).free;
 Tdef(\track1,{
 Ndef(\noise3,{
 var sig = LatoocarfianL.ar(
